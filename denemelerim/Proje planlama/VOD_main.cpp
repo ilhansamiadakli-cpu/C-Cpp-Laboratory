@@ -66,6 +66,10 @@ class VodLexer {
         }
         void createTokens(){
             ifstream file(filePath);
+            if (!file.is_open()) {
+                cerr << KIRMIZI << "[ VOD LEXER EROR]:" << BEYAZ << "Dosya açılamadı: " << filePath << endl;
+                return;
+            }
             string line;
             readType read = READ_IDLE;
             string devText = "";
@@ -265,7 +269,7 @@ string Renkdönüştür(string renk){
 int main(){
     cout <<"\n\033[H\033[J" << endl;
     //cout << "-------VodLexer Testi-------" << endl;
-    VOID::VodLexer lexer("deneme.txt");
+    VOID::VodLexer lexer("denemelerim/proje planlama/deneme.txt");
     lexer.createTokens();
     vector<VOID::Token> tokens = lexer.getTokens();
 
