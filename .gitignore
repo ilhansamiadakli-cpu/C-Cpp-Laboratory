@@ -11,3 +11,9 @@ Makefile
 
 # Mac'in ürettiği özel gizli dosyalar
 ._*
+# Gelecekte .gitignore dosyanın altına eklenebilecek çalıştırılabilir dosya filtreleri
+**/bin/
+*.exe
+snake_mac
+filesystem
+main
