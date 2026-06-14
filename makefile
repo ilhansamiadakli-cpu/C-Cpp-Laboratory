@@ -3,8 +3,9 @@ CXX      = g++
 CXXFLAGS = -Wall -Wextra -std=c++17
 
 # Klasör Yapısı
-SRC_DIR  = denemelerim #bu kısmı kendi klasör yapınıza göre değiştirin
+SRC_DIR  = denemelerim
 BIN_DIR  = bin
+# SRC_DIR değişkenini farklı bir ana klasöre çevirmek isterseniz burayı değiştirin.
 
 .PHONY: all clean push help
 
@@ -18,8 +19,8 @@ all: | $(BIN_DIR)
 		SHOULD_RUN=0; \
 	else \
 		echo "❌ Hata: Klasör seçmediniz!"; \
-		echo "👉 Sadece derlemek için: make dir=\"<klasör_adı>\""; \
-		echo "👉 Derleyip anında çalıştırmak için: make run=\"<klasör_adı>\""; \
+		echo "👉 Sadece derlemek için: make dir=\"klasör_adı\""; \
+		echo "👉 Derleyip anında çalıştırmak için: make run=\"klasör_adı\""; \
 		echo "\n📁 Mevcut laboratuvar klasörleriniz:"; \
 		ls -1 "$(SRC_DIR)"; \
 		exit 1; \
