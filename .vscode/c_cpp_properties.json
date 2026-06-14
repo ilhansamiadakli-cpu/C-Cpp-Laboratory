@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/denemelerim/Raylib/build/_deps/raylib-src/src/**",
+                "${workspaceFolder}/opt/homebrew/include/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Library/Frameworks",
+                "/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}

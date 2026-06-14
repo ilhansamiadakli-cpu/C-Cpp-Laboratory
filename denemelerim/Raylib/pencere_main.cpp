@@ -1,4 +1,4 @@
-#include <raylib.h>
+#include "raylib.h"
 
 int main() {
     InitWindow(800, 450, "Raylib - macOS Test");
