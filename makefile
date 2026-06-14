@@ -3,7 +3,7 @@ CXX      = g++
 CXXFLAGS = -Wall -Wextra -std=c++17
 
 # Klasör Yapısı
-SRC_DIR  = denemelerim
+SRC_DIR  = denemelerim #bu kısmı kendi klasör yapınıza göre değiştirin
 BIN_DIR  = bin
 
 .PHONY: all clean push
