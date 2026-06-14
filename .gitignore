@@ -1,0 +1,13 @@
+# Derleme ve Geçici Sistem Çıktıları
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.out
+*.dSYM/
+.DS_Store
+
+# Mac'in ürettiği özel gizli dosyalar
+._*

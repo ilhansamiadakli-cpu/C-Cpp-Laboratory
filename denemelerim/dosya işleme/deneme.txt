@@ -1,0 +1,11 @@
+//bu bir yorum satırıdır
+// altaki de baskıdır
+[KIRMIZI]
+// bu da işlenecek ve çıktı olarak sunulucak metindir
+{
+Merhaba, bu bir deneme dosyasıdır.
+Dosya işlemleri C++'ta oldukça kolaydır.
+}
+//[BEYAZ]
+{bu satır normale dönmeli}
+
