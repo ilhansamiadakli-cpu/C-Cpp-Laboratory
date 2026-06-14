@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Wextra -std=c++17
 SRC_DIR  = denemelerim #bu kısmı kendi klasör yapınıza göre değiştirin
 BIN_DIR  = bin
 
-.PHONY: all clean push
+.PHONY: all clean push help
 
 # 1. Dinamik Derleme ve Çalıştırma Mantığı (Beyin Kısmı)
 all: | $(BIN_DIR)
@@ -67,3 +67,28 @@ push:
 	git commit -m "$$msg"
 	git push origin main
 	@echo "🎉 Değişiklikler GitHub'a uçuruldu!"
+help:
+	@echo "================================================================"
+	@echo "🛠️  C-Cpp-Laboratory Merkezi Otomasyon Sistemi (Vmake Öncesi) 🛠️"
+	@echo "================================================================"
+	@echo ""
+	@echo "KULLANIM KOMUTLARI:"
+	@echo "  make help                  : Bu yardım menüsünü gösterir."
+	@echo "  make dir=\"klasör_adı\"    : Belirtilen klasörü derler ve bin/ içine atar."
+	@echo "  make run=\"klasör_adı\"    : Belirtilen klasörü derler ve hemen çalıştırır."
+	@echo "                               (Klasörde birden fazla program varsa interaktif menü sunar)"
+	@echo "  make clean                 : Tüm derlenmiş binary'leri (bin/ klasörünü) siler."
+	@echo "  make push                  : Kodları otomatik olarak GitHub'a gönderir."
+	@echo ""
+	@echo "SİSTEM TASARIM KURALLARI (Gelecekteki İlhan'a Notlar):"
+	@echo "  1. Ana Programlar          : İçinde 'int main()' olan ve bağımsız çalışacak"
+	@echo "                               dosyaların adı '_main.cpp' ile BİTMELİDİR."
+	@echo "                               (Örn: custom_allocator_main.cpp)"
+	@echo "  2. Yardımcı Dosyalar       : Düz '.cpp' uzantılı dosyalar nesne/yardımcı"
+	@echo "                               kabul edilir ve '_main.cpp' olan komutanlara"
+	@echo "                               otomatik olarak bağlanır."
+	@echo "  3. Çıktılar (Binaries)     : Derlenen tüm çalıştırılabilir dosyalar projenin"
+	@echo "                               en dışındaki ortak 'bin/' klasöründe toplanır."
+	@echo "  4. Alt Makefile'lar        : Bir alt klasörün içinde özel bir Makefile varsa,"
+	@echo "                               merkezi sistem sorumluluğu otomatik ona devreder."
+	@echo "================================================================"

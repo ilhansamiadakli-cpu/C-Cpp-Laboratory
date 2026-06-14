@@ -22,6 +22,5 @@ int main()
     numbers.clear(); //* vektörün tüm elemanlarını kaldırır, boyutu sıfırlar ancak kapasiteyi değiştirmez.
     cout <<"numbers.size() after clear: "<<numbers.size() << endl;//* clear() metodu, vektörün tüm elemanlarını kaldırır, bu yüzden boyut 0 olur.
     cout <<"numbers.capacity() after clear: "<<numbers.capacity() << endl;//* clear() metodu, vektörün tüm elemanlarını kaldırır ancak kapasiteyi değiştirmez, bu yüzden kapasite hala 20'dir.
-    cout <<"numbers.empty() after clear: "<< numbers.insert() << endl; //* vektörün boş olup olmadığını kontrol eder. clear() metodundan sonra vektör boş olduğu için true döner.
     return 0;
 }
