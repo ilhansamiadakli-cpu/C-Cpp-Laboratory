@@ -3,7 +3,6 @@ build/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-Makefile
 *.o
 *.out
 *.dSYM/
@@ -11,23 +10,3 @@ Makefile
 
 # İçinde executables (çalıştırılabilir binary) barındıran tüm bin klasörleri
 **/bin/
-
-# Belirli uzantısız derleme çıktıları ve exe'ler
-*.exe
-snake_mac
-filesystem
-VOD_main
-main
-main2
-main3
-main4
-main5
-main6
-main7
-snake
-snake_game
-custom_allocator
-hello
-
-# Büyük veri dosyalarını (WAD gibi) dilersen hariç tutabilirsin
-# *.WAD

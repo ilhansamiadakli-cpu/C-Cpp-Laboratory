@@ -20,7 +20,7 @@ int main() {
 
     // "." işareti "şu an içinde bulunduğum klasör" demektir.
     // İstersen buraya "/Users/mac/Visual Stdio C++/denemelerim/" gibi tam yol da yazabilirsin.
-    std::string test_klasoru = "/Users/mac/Visual Stdio C++/denemelerim"; 
+    std::string test_klasoru = "."; 
 
     kaynak_dosyalari_otomatik_bul(test_klasoru);
 
