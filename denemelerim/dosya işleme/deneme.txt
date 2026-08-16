@@ -6,6 +6,5 @@
 Merhaba, bu bir deneme dosyasıdır.
 Dosya işlemleri C++'ta oldukça kolaydır.
 }
-//[BEYAZ]
+[BEYAZ]
 {bu satır normale dönmeli}
-
