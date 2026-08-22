@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include <algorithm>
+//#include <algorithm>
 
 namespace VOD {
 
@@ -12,53 +12,51 @@ private:
     std::ostringstream buffer;
 
     void draw_box_and_flush() {
-        std::string raw = buffer.str();
-        buffer.str("");
-        buffer.clear();
+            std::string raw = buffer.str();
+            buffer.str("");
+            buffer.clear();
 
-        if (raw.empty()) return;
+            if (raw.empty()) return;
 
-        // Metni satırlara böl
-        std::vector<std::string> lines;
-        std::string line;
-        std::istringstream stream(raw);
-        size_t max_len = 0;
+            std::vector<std::string> lines;
+            std::string line;
+            std::istringstream stream(raw);
+            size_t max_len = 0;
 
-        while (std::getline(stream, line)) {
-            // \r karakterlerini temizle
-            if (!line.empty() && line.back() == '\r') line.pop_back();
-            lines.push_back(line);
-            if (line.length() > max_len) {
-                max_len = line.length();
+            while (std::getline(stream, line)) {
+                if (!line.empty() && line.back() == '\r') line.pop_back();
+                lines.push_back(line);
+                if (line.length() > max_len) {
+                    max_len = line.length();
+                }
             }
+
+            if (lines.empty()) return;
+
+            const std::string CYAN  = "\033[1;36m";
+            const std::string GREEN = "\033[32m";
+            const std::string RESET = "\033[0m";
+
+            // 1. Üst Kenarlık ┌───┐
+            std::cout << CYAN << "┌";
+            for (size_t i = 0; i < max_len + 2; ++i) std::cout << "─";
+            std::cout << "┐\n" << RESET;
+
+            // 2. İçerik Satırları │ Metin │ (DÜZELTİLDİ)
+            for (const auto& l : lines) {
+                std::cout << CYAN << "│ " << GREEN << l << RESET;
+                for (size_t i = 0; i < (max_len - l.length()) + 1; ++i) {
+                    std::cout << " ";
+                }
+                std::cout << CYAN << "│\n" << RESET;
+            }
+
+            // 3. Alt Kenarlık └───┘
+            std::cout << CYAN << "└";
+            for (size_t i = 0; i < max_len + 2; ++i) std::cout << "─";
+            std::cout << "┘\n" << RESET;
+            std::cout.flush();
         }
-
-        if (lines.empty()) return;
-
-        // ANSI Renk Kodları & Unicode Çerçeve Elemanları
-        const std::string CYAN  = "\033[1;36m";
-        const std::string GREEN = "\033[32m";
-        const std::string RESET = "\033[0m";
-
-        // 1. Üst Kenarlık ┌───┐
-        std::cout << CYAN << "┌─";
-        for (size_t i = 0; i < max_len + 2; ++i) std::cout << "─";
-        std::cout << "┐\n" << RESET;
-
-        // 2. İçerik Satırları │ Metin │
-        for (const auto& l : lines) {
-            std::cout << CYAN << "│ " << GREEN << l;
-            // Sağ boşlukları doldur
-            for (size_t i = 0; i < (max_len - l.length()); ++i) std::cout << " ";
-            std::cout << CYAN << " │\n" << RESET;
-        }
-
-        // 3. Alt Kenarlık └───┘
-        std::cout << CYAN << "└─";
-        for (size_t i = 0; i < max_len + 2; ++i) std::cout << "─";
-        std::cout << "┘\n" << RESET;
-        std::cout.flush();
-    }
 
 public:
     // Genel tipler için operator<< (int, std::string, double vb.)
