@@ -1,0 +1,6 @@
+{
+  "sunucu": "Uretim-01",
+  "ana_port": 8080,
+  "yedek_port": 8200,
+  "canli_mi": true
+}

@@ -1,0 +1,28 @@
+let taban_fiyat = 1200;
+let vergi_orani = 0.20;
+let kargo_ucreti = 45;
+let indirim_kuponu = 150;
+
+// Karmaşık formül: ((taban * (1 + vergi)) - indirim) + kargo
+let brut_vergi = taban_fiyat * vergi_orani;
+let ara_toplam = taban_fiyat + brut_vergi;
+let nihai_odenecek = ara_toplam - indirim_kuponu + kargo_ucreti;
+
+export {
+    magaza: "VodStore Global",
+    fatura: {
+        kalemler_toplami: taban_fiyat,
+        vergi_tutari: brut_vergi,
+        kargo: kargo_ucreti,
+        indirim: indirim_kuponu
+    },
+    finans: {
+        odenecek_tutar: nihai_odenecek,
+        para_birimi: "TRY",
+        odendi: true
+    },
+    meta: {
+        surum: 1,
+        canli_ortam: false
+    }
+};

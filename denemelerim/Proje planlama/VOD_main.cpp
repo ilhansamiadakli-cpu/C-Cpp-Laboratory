@@ -269,7 +269,7 @@ string Renkdönüştür(string renk){
 int main(){
     cout <<"\n\033[H\033[J" << endl;
     cout << "-------VodLexer Testi-------" << endl;
-    VOID::VodLexer lexer("denemelerim/proje planlama/deneme.txt");
+    VOID::VodLexer lexer("deneme.txt"); //denemelerim/proje planlama/deneme.txt
     lexer.createTokens();
     vector<VOID::Token> tokens = lexer.getTokens();
 
@@ -283,7 +283,7 @@ int main(){
         vector<VOID::printOrder> Prints = parser.getPrint();
         cout << "\n-------VodParser Testi-------" << endl;
         for (const auto& print : Prints) {
-            // cout<< Renkdönüştür(print.color) << "\n"<< print.text << endl;
+             cout<< Renkdönüştür(print.color) << "\n"<< print.text << endl;
         }
     }
     return 0;
