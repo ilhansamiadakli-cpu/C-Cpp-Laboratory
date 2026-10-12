@@ -5,9 +5,7 @@
 #include <cctype>
 #include <iostream>
 
-// ==========================================
-// 1. TOKEN TANIMLARI
-// ==========================================
+
 
 enum class TokenType {
     END_OF_FILE,
@@ -55,9 +53,7 @@ struct Token {
     size_t line;
 };
 
-// ==========================================
-// 2. LEXER SINIFI
-// ==========================================
+
 
 class Lexer {
 public:
@@ -195,9 +191,7 @@ private:
     }
 };
 
-// ==========================================
-// 3. YARDIMCI YAZDIRMA FONKSİYONU
-// ==========================================
+
 
 inline const char* token_type_to_string(TokenType type) {
     switch (type) {

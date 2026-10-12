@@ -1,6 +1,7 @@
 #include "Lexer.hpp"
 #include "Parser.hpp"
 #include "Evaluator.hpp"
+#include "vod_cout.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -105,7 +106,7 @@ int main(int argc, char* argv[]) {
             out_file.close();
             std::cout << "[+] Basariyla derlendi -> " << output_path << "\n";
         } else {
-            std::cout << json_output << "\n";
+            VOD::Cout << json_output << std::endl;
         }
 
         if (measure_time) {
