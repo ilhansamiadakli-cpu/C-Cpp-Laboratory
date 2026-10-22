@@ -1,5 +1,27 @@
 {
+  // 1. Clangd için Derleme Veritabanı Yolu
+  // CMakeLists.txt'ye eklediğimiz CMAKE_EXPORT_COMPILE_COMMANDS sayesinde
+  // clangd include yollarını buradan okur ve sahte hatalar kendiliğinden söner.
+  "clangd.arguments": [
+    "--compile-commands-dir=${workspaceFolder}/build",
+    "--background-index",
+    "--clang-tidy=false",
+    "--header-insertion=never",
+    "-j=4"
+  ],
+
+   // Satır içindeki veya sonundaki kırmızı hata kutularını/mesajlarını gizler
+  "editor.inlayHints.enabled": "off",
+  
+  // Kodun altındaki kırmızı/sarı dalgalı çizgileri (squiggles) tamamen kapatır
+  "editor.renderValidationDecorations": "off",
+  
+  // Sorunlar sekmesindeki otomatik hata işaretçilerini gizler
+  "problems.decorations.enabled": false,
+
+  "errorLens.enabled": false,
   "files.associations": {
-    "*.vod": "rust"
+    "*.hpp": "cpp",
+    "*.h": "c"
   }
 }

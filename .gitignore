@@ -7,6 +7,9 @@ cmake_install.cmake
 *.out
 *.dSYM/
 .DS_Store
+.idea/
+cmake-build-*/
+.vscode/
 
 # İçinde executables (çalıştırılabilir binary) barındıran tüm bin klasörleri
 **/bin/
