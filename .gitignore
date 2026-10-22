@@ -1,15 +1,32 @@
-# Klasik derleme çıktıları
-build/
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-*.o
-*.out
-*.dSYM/
+# macOS İşletim Sistemi Kalıntıları
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# C/C++ Derleme Çıktıları ve Nesne Dosyaları
+*.o
+*.obj
+*.out
+*.app
+*.exe
+*.dll
+*.so
+*.dylib
+bin/
+build/
+out/
+
+# CMake ve CLion (JetBrains) Artıkları
 .idea/
 cmake-build-*/
-.vscode/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
 
-# İçinde executables (çalıştırılabilir binary) barındıran tüm bin klasörleri
-**/bin/
+# VS Code Ayarları
+.vscode/
+*.code-workspace
